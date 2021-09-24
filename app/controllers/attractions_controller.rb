@@ -4,7 +4,10 @@ class AttractionsController < ApplicationController
   end
 
   def show
+    # binding.pry
+    @user = User.find(session[:user_id])
     @attraction = Attraction.find(params[:id])
+    @ride = @attraction.rides.build(user_id: @user.id)
   end
 
   private
