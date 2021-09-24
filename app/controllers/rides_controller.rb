@@ -1,7 +1,11 @@
 class RidesController < ApplicationController
 
   def create
+
     @ride = Ride.create(ride_params)
+    @ride.take_ride
+    # @ride.mood
+    # binding.pry
     redirect_to user_path(@ride.user)
   end
 
