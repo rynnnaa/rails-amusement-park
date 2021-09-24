@@ -1,4 +1,7 @@
+<h1>INDEX</h1>
+
 <% @attractions.each do |attraction| %>
+<h1>attractin iteration</h1>
 <%= link_to "Show #{attraction.name}", attraction_path(attraction)%>
 <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
 <% end %>
