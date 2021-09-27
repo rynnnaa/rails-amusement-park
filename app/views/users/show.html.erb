@@ -1,7 +1,12 @@
-<h1><%= @user.name %></h1>
-if <% @user.admin %>
-<%= "ADMIN" if @user.admin %>
+<% if flash[:message] %>
+<p><%= flash[:message] %>
+<% end %>
 
+<h1><%= @user.name %></h1>
+
+<% if @user.admin? %>
+<%= "ADMIN" if @user.admin %>
+<% end %>
 Mood: <%= @user.mood %>
 Tickets: <%= @user.tickets %>
 Height: <%= @user.height %>

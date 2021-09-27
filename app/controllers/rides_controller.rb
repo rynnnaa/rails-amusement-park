@@ -1,12 +1,13 @@
 class RidesController < ApplicationController
 
   def create
-
     @ride = Ride.create(ride_params)
-    @ride.take_ride
-    # @ride.mood
-    # binding.pry
+    @ride.user.mood
+    flash[:message] = @ride.take_ride
     redirect_to user_path(@ride.user)
+  
+
+    # redirect_to user_path(@ride.user), flash: { message: take_this_ride }
   end
 
   def update
